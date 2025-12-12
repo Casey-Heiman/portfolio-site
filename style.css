@@ -1,0 +1,179 @@
+/* =========================
+   GLOBAL STYLING
+========================= */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f4f6;
+    color: #222;
+}
+
+a {
+    color: #6b8a1f;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   HEADER & NAVBAR
+========================= */
+.site-header {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.navbar {
+    margin-top: 16px;
+}
+
+.navbar a {
+    color: white;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+/* =========================
+   PAGE SECTIONS
+========================= */
+.section {
+    max-width: 1100px;
+    margin: 40px auto;
+    background: white;
+    padding: 40px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-radius: 6px;
+}
+
+.section h2 {
+    color: #6b8a1f;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   PROJECT SECTION LAYOUT
+========================= */
+.project-section {
+    margin-bottom: 50px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 40px;
+}
+
+.project-section:last-child {
+    border-bottom: none;
+}
+
+.project-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.project-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* LEFT: BULLETS */
+.project-details {
+    flex: 1;
+    min-width: 300px;
+}
+
+.project-details ul {
+    padding-left: 20px;
+}
+
+.project-details li {
+    margin-bottom: 8px;
+}
+
+/* RIGHT: IMAGE GRID */
+.project-images {
+    flex: 1;
+    min-width: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* AUTO-CROPPED IMAGE BOXES */
+.project-images img {
+    width: 100%;
+    height: 220px;              /* ✅ Forces equal height */
+    object-fit: cover;         /* ✅ Auto-crops */
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+    .project-content {
+        flex-direction: column;
+    }
+
+    .project-images {
+        grid-template-columns: 1fr;
+    }
+
+    .project-images img {
+        height: 200px;
+    }
+}
+
+/* VIDEO BOX TO MATCH IMAGE SIZE */
+.project-video {
+    width: 100%;
+    height: 220px;              /* ✅ Same height as images */
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.project-video iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* PLAY BUTTON OVER VIDEO THUMBNAILS */
+.video-link {
+    position: relative;
+    display: flex;
+}
+
+.video-link::after {
+    content: "▶";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 52px;
+    color: white;
+    text-shadow: 0 0 12px rgba(0,0,0,0.8); /* ✅ Keeps it visible without a dark circle */
+    pointer-events: none;
+}
+
+/* ABOUT ME HEADSHOT STYLING */
+.about-photo-wrapper {
+    text-align: center;
+    margin: 30px 0 10px;
+}
+
+.about-photo {
+    width: 260px;               /* larger */
+    height: 260px;              /* larger */
+    border-radius: 50%;         /* circle */
+    object-fit: cover;
+    border: 4px solid #6b8a1f;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+
